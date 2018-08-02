@@ -1,4 +1,4 @@
 # swift-calculator
 
-## How does it looke like
+## How does it looks like ?
 ![Alt text](/calculator.png?raw=true "Calculator App")
