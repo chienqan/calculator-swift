@@ -1,4 +1,4 @@
 # swift-calculator
 
 ## How does it looke like
-![Alt text](/screenshot.png?raw=true "Calculator App")
+![Alt text](/calculator.png?raw=true "Calculator App")
