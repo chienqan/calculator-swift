@@ -12,6 +12,7 @@
 		109DDDD52111C007002876E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109DDDD32111C007002876E2 /* Main.storyboard */; };
 		109DDDD72111C009002876E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 109DDDD62111C009002876E2 /* Assets.xcassets */; };
 		109DDDDA2111C009002876E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109DDDD82111C009002876E2 /* LaunchScreen.storyboard */; };
+		109DDDEC211202FD002876E2 /* MathParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109DDDEB211202FD002876E2 /* MathParser.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		109DDDD62111C009002876E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		109DDDD92111C009002876E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		109DDDDB2111C009002876E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		109DDDEB211202FD002876E2 /* MathParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MathParser.framework; path = Carthage/Build/iOS/MathParser.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				109DDDEC211202FD002876E2 /* MathParser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				109DDDCE2111C007002876E2 /* calculator */,
 				109DDDCD2111C007002876E2 /* Products */,
+				109DDDEA211202FC002876E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +68,14 @@
 			path = calculator;
 			sourceTree = "<group>";
 		};
+		109DDDEA211202FC002876E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				109DDDEB211202FD002876E2 /* MathParser.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +86,7 @@
 				109DDDC82111C007002876E2 /* Sources */,
 				109DDDC92111C007002876E2 /* Frameworks */,
 				109DDDCA2111C007002876E2 /* Resources */,
+				109DDDED21120303002876E2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -129,6 +142,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		109DDDED21120303002876E2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MathParser.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		109DDDC82111C007002876E2 /* Sources */ = {
@@ -281,6 +311,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +332,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
